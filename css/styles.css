@@ -2815,8 +2815,10 @@ td:last-child {
 
 .list-items__item-title,
 .list-items__item-small-title {
-	color     : var(--color-text-dark);
+	color     : blue;
 	margin-top: 0;
+	text-decoration: underline;
+
 }
 
 .list-items__item-icon {
