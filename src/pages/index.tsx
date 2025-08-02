@@ -1,6 +1,4 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,13 +13,16 @@ const geistMono = Geist_Mono({
 export default function Home() {
   return (
     <div
-      className={`${geistSans.className} ${geistMono.className} font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20`}
+      className={`${geistSans.variable} ${geistMono.variable} grid  items-center justify-items-center gap-16 p-4 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20`}
     >
-      <Header />
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <h1>CARUAZU</h1>
-      </main>
-      <Footer />
+      <div className="max-w-sm min-w-sm rounded overflow-hidden bg-white">
+        <div className="px-6 py-4">
+          <div className="font-bold text-xl mb-2">Gustavo Caruazu</div>
+          <p className="text-gray-700 text-base">
+            Oi, me chamo Gustavo, desenvolvo aplicações WEB.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
