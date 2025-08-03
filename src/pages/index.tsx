@@ -15,7 +15,7 @@ export default function Home() {
     <div
       className={`${geistSans.variable} ${geistMono.variable} grid  items-center justify-items-center gap-16 p-4 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20`}
     >
-      <div className="max-w-sm min-w-sm rounded overflow-hidden bg-white">
+      <div className="w-full sm:max-w-sm rounded overflow-hidden bg-white">
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">Gustavo Caruazu</div>
           <p className="text-gray-700 text-base">
