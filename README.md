@@ -10,10 +10,7 @@ Usei de inspiração o Design System da Anthropic
 
 ## Para fazer
 
-1. Projetos
-2. Sobre
-3. Equipe
-4. Contato
+2. Contato
 
 ## Instalação
 

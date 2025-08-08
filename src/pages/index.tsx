@@ -1,6 +1,7 @@
 import { Equipe, TeamMember } from "@/components/equipe";
 import { Hero } from "@/components/hero";
 import { Planos } from "@/components/planos";
+import { Projetos } from "@/components/projetos";
 import { Sobre } from "@/components/sobre";
 // import { Geist, Geist_Mono } from "next/font/google";
 
@@ -28,6 +29,7 @@ export default function Home() {
     <>
       <article>
         <Hero />
+        <Projetos />
         <Planos />
         <Sobre />
         <Equipe members={exampleMembers} />
