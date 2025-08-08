@@ -13,8 +13,7 @@ Usei de inspiração o Design System da Anthropic
 1. Projetos
 2. Sobre
 3. Equipe
-4. Preços
-5. Contato
+4. Contato
 
 ## Instalação
 

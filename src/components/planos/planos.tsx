@@ -89,7 +89,7 @@ export function Planos() {
           <article
             key={plan.name}
             className={[
-              "relative flex flex-col rounded-2xl border bg-white/70 p-6 shadow-sm backdrop-blur transition-all dark:bg-zinc-900/60",
+              "relative flex flex-col rounded-2xl border bg-white p-6 shadow-sm backdrop-blur transition-all dark:bg-zinc-900/60",
               plan.highlighted
                 ? "border-lime-600 shadow-md ring-1 ring-lime-600/40 md:scale-[1.03]"
                 : "border-zinc-200 hover:shadow-md dark:border-zinc-800",
