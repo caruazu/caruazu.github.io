@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export const Footer = () => {
   return (
-    <footer className="bg-slate-300 row-start-3 flex gap-[24px] flex-wrap items-center justify-center p-10">
-      <a
+    <footer className="bg-slate-300 row-start-3 flex gap-[24px] flex-wrap items-end justify-end p-10">
+      {/* <a
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"
         href="https://wa.me/message/Y7VNNQW6QXP2K1/"
         target="_blank"
@@ -17,7 +17,7 @@ export const Footer = () => {
           height={32}
           style={{ filter: "invert(100%)" }}
         />
-      </a>
+      </a> */}
       <a
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"
         href="https://www.instagram.com/caruazu/"
@@ -63,7 +63,7 @@ export const Footer = () => {
           style={{ filter: "invert(100%)" }}
         />
       </a>
-      <a
+      {/* <a
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"
         href="mailto:gustavo@caruazu.com"
         target="_blank"
@@ -77,7 +77,7 @@ export const Footer = () => {
           height={32}
           style={{ filter: "invert(100%)" }}
         />
-      </a>
+      </a> */}
     </footer>
   );
 };

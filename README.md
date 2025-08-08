@@ -8,10 +8,6 @@ Usei de inspiração o Design System da Anthropic
 - [figma 2](https://www.figma.com/community/file/1420804279653043573)
 - [estudo](https://abduzeedo.com/seamlessly-crafting-ai-branding-and-visual-identity-anthropic)
 
-## Para fazer
-
-2. Contato
-
 ## Instalação
 
 ```shell
