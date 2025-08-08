@@ -1,4 +1,5 @@
 import { Hero } from "@/components/hero";
+import { Planos } from "@/components/planos";
 import { Geist, Geist_Mono } from "next/font/google";
 
 const geistSans = Geist({
@@ -15,7 +16,8 @@ export default function Home() {
   return (
     <>
       <article>
-        <Hero></Hero>
+        <Hero />
+        <Planos />
       </article>
     </>
   );
