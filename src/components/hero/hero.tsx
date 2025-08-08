@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const Hero = () => {
   return (
-    <section className="bg-white py-12">
+    <section className="py-12">
       <div className="container mx-auto flex flex-col md:flex-row items-center px-6">
         {/* Texto */}
         <div className="flex-1 text-center md:text-left">
