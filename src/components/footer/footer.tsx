@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const Footer = () => {
   return (
-    <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center p-10">
+    <footer className="bg-slate-300 row-start-3 flex gap-[24px] flex-wrap items-center justify-center p-10">
       <a
         className="flex items-center gap-2 hover:underline hover:underline-offset-4"
         href="https://wa.me/message/Y7VNNQW6QXP2K1/"
@@ -15,6 +15,7 @@ export const Footer = () => {
           alt="File icon"
           width={32}
           height={32}
+          style={{ filter: "invert(100%)" }}
         />
       </a>
       <a
@@ -29,6 +30,7 @@ export const Footer = () => {
           alt="File icon"
           width={32}
           height={32}
+          style={{ filter: "invert(100%)" }}
         />
       </a>
       <a
@@ -43,6 +45,7 @@ export const Footer = () => {
           alt="File icon"
           width={32}
           height={32}
+          style={{ filter: "invert(100%)" }}
         />
       </a>
       <a
@@ -57,6 +60,7 @@ export const Footer = () => {
           alt="File icon"
           width={32}
           height={32}
+          style={{ filter: "invert(100%)" }}
         />
       </a>
       <a
@@ -71,6 +75,7 @@ export const Footer = () => {
           alt="File icon"
           width={32}
           height={32}
+          style={{ filter: "invert(100%)" }}
         />
       </a>
     </footer>

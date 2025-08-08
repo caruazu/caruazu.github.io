@@ -13,7 +13,7 @@ export const Header = () => {
           <Link href={""}>Sobre</Link>
           <Link href={""}>Time</Link>
 
-          <Button>Bora conversar!</Button>
+          <Button>Contato</Button>
         </nav>
       </div>
     </header>
