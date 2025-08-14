@@ -2,15 +2,15 @@ import Image from "next/image";
 
 export const Hero = () => {
   return (
-    <section className="py-12">
-      <div className="container mx-auto flex flex-col md:flex-row items-center px-6">
+    <section className="py-12 bg-forest-light">
+      <div className="container mx-auto flex flex-col md:flex-row items-center w-full max-w-7xl p-6">
         {/* Texto */}
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Olá! Somos a Caruazu,
+            Olá! Somos a Healthchain,
           </h1>
-          <p className="text-lg text-gray-600 mb-6">
-            Desenvolvemos aplicações WEB.
+          <p className="text-lg text-gray-800 mb-6">
+            Desenvolvemos tecnologias para a saúde.
           </p>
           <button className="bg-gray-800 text-white px-6 py-3 rounded-lg">
             Saiba mais

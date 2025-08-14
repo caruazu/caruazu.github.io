@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export const Header = () => {
   return (
-    <header>
-      <div className="container mx-auto flex items-center justify-between p-4">
+    <header className="bg-forest-light">
+      <div className="container flex items-center justify-between  w-full max-w-7xl mx-auto p-6">
         <div className="text-1xl font-bold text-gray-800">
-          <Link href="/">CARUAZU</Link>
+          <Link href="/">HEALTHCHAIN</Link>
         </div>
 
         <nav className="flex items-center space-x-6">

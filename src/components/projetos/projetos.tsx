@@ -18,13 +18,13 @@ type ProjetosProps = {
 export function Projetos({
   heroTitle = "Projetos",
   heroSubtitle = "Nossas soluções para a área da saúde buscam integrar tecnologia avançada à prática clínica, promovendo precisão, economia e facilidade de uso.",
-  promptImageSrc = "/images/prompt.png",
+  promptImageSrc = "/images/prompt.jpg",
   codeImageSrc = "/images/claude-code.png",
-  extraImageSrc = "/images/extra.png",
+  extraImageSrc = "/images/extra.jpg",
 }: ProjetosProps) {
   return (
     <section className="w-full bg-white text-zinc-900">
-      <div className="text-center mx-auto pt-24 max-w-6xl px-6 mt-12 md:mt-20 pb-16 md:pb-24">
+      <div className="text-center mx-auto pt-16 max-w-6xl px-6  ">
         <h1 className="text-3xl/tight md:text-5xl/tight font-semibold tracking-tight">
           {heroTitle}
         </h1>
@@ -34,7 +34,7 @@ export function Projetos({
       </div>
 
       {/* Seção 1 */}
-      <div className="mx-auto max-w-6xl px-6 mt-12 md:mt-20 pb-16 md:pb-24">
+      <div className="mx-auto max-w-6xl px-6 mt-12 pb-8 ">
         <div className="mt-10 md:mt-14 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
           <div className="order-2 lg:order-none">
             <h3 className="text-2xl md:text-3xl font-semibold tracking-tight">
@@ -70,7 +70,7 @@ export function Projetos({
       </div>
 
       {/* Seção 2 */}
-      <div className="mx-auto max-w-6xl px-6 mt-12 md:mt-20 pb-16 md:pb-24">
+      <div className="mx-auto max-w-6xl px-6 mt-12 pb-8 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="p-0 order-first lg:order-none">
             <Link href={codeImageSrc}>
@@ -107,7 +107,7 @@ export function Projetos({
       </div>
 
       {/* Seção 3 */}
-      <div className="mx-auto max-w-6xl px-6 mt-12 md:mt-20 pb-16 md:pb-24">
+      <div className="mx-auto max-w-6xl px-6 mt-12  pb-16 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="order-2 lg:order-none">
             <h3 className="text-2xl md:text-3xl font-semibold tracking-tight">

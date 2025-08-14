@@ -12,7 +12,7 @@ interface Props {
 }
 
 const defaultContent: Required<Omit<Props, "id" | "className">> = {
-  title: "Quem somos",
+  title: "Sobre nós",
   intro:
     "Nossa startup foi oficialmente fundada em 09 de janeiro de 2024, originando-se de uma iniciativa lançada em abril de 2023. Naquela época, identificamos e examinamos demandas específicas no setor de saúde, reconhecendo-as como oportunidades para que fossem propostas soluções frente aos desafios observados.",
   columns: [

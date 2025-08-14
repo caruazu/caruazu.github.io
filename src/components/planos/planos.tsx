@@ -78,7 +78,7 @@ export function Planos() {
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
           Planos e Preços
         </h2>
-        <p className="mt-3 text-sm text-muted-foreground/80 dark:text-white/60">
+        <p className="mt-3 text-sm text-muted-foreground/80">
           Consultoria profissional e com suporte de verdade. Escolha o plano que
           faz sentido para você.
         </p>
@@ -89,23 +89,23 @@ export function Planos() {
           <article
             key={plan.name}
             className={[
-              "relative flex flex-col rounded-2xl border bg-white p-6 shadow-sm backdrop-blur transition-all dark:bg-zinc-900/60",
+              "relative flex flex-col rounded-2xl border bg-card p-6 shadow-sm backdrop-blur transition-all",
               plan.highlighted
-                ? "border-lime-600 shadow-md ring-1 ring-lime-600/40 md:scale-[1.03]"
-                : "border-zinc-200 hover:shadow-md dark:border-zinc-800",
+                ? "border-forest-medium ring-1 ring-forest-medium/40 md:scale-[1.03]"
+                : "border-border hover:shadow-md",
             ].join(" ")}
           >
             {plan.highlighted && (
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-lime-700 px-3 py-1 text-xs font-semibold text-white shadow">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-forest-medium px-3 py-1 text-xs font-semibold text-white shadow">
                 Mais popular
               </span>
             )}
 
             <div className="mb-4">
-              <h3 className="text-lg font-semibold text-zinc-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-foreground">
                 {plan.name}
               </h3>
-              <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">
+              <p className="mt-1 text-sm text-muted-foreground">
                 {plan.description}
               </p>
             </div>
@@ -114,13 +114,13 @@ export function Planos() {
               <span
                 className={
                   plan.highlighted
-                    ? "text-4xl font-bold text-lime-700"
-                    : "text-4xl font-bold"
+                    ? "text-4xl font-bold text-forest-medium"
+                    : "text-4xl font-bold text-foreground"
                 }
               >
                 {plan.price}
               </span>
-              <span className="text-sm text-zinc-500">/ mês</span>
+              <span className="text-sm text-muted-foreground">/ mês</span>
             </div>
 
             <ul className="mb-6 space-y-3 text-sm">
@@ -129,13 +129,11 @@ export function Planos() {
                   <CheckIcon
                     className={
                       plan.highlighted
-                        ? "mt-0.5 h-5 w-5 text-lime-700"
-                        : "mt-0.5 h-5 w-5 text-emerald-600"
+                        ? "mt-0.5 h-5 w-5 text-forest-dark"
+                        : "mt-0.5 h-5 w-5 text-forest-medium"
                     }
                   />
-                  <span className="text-zinc-700 dark:text-zinc-200">
-                    {f.label}
-                  </span>
+                  <span className="text-foreground/90">{f.label}</span>
                 </li>
               ))}
             </ul>
@@ -143,10 +141,11 @@ export function Planos() {
             <div className="mt-auto">
               <button
                 className={[
-                  "w-full rounded-xl px-4 py-2 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2",
+                  "w-full rounded-xl px-4 py-2 text-sm font-semibold transition-colors",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring",
                   plan.highlighted
-                    ? "bg-lime-700 text-white hover:bg-lime-800 focus:ring-lime-700"
-                    : "bg-zinc-900 text-white hover:bg-zinc-800 focus:ring-zinc-900 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200",
+                    ? "bg-forest-medium text-white hover:bg-forest-vivid"
+                    : "bg-primary text-primary-foreground hover:opacity-90",
                 ].join(" ")}
                 onClick={() => alert(`Plano selecionado: ${plan.name}`)}
                 aria-label={`Selecionar plano ${plan.name}`}
