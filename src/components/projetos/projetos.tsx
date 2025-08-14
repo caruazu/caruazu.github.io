@@ -23,7 +23,7 @@ export function Projetos({
   extraImageSrc = "/images/extra.jpg",
 }: ProjetosProps) {
   return (
-    <section className="w-full bg-white text-zinc-900">
+    <section id="projetos" className="w-full bg-white text-zinc-900">
       <div className="text-center mx-auto pt-16 max-w-6xl px-6  ">
         <h1 className="text-3xl/tight md:text-5xl/tight font-semibold tracking-tight">
           {heroTitle}

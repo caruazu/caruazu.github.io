@@ -13,6 +13,10 @@ Usei de inspiração o Design System da Anthropic
 - imagem interativa (infográfico)
 - Tornar os botões funcionais
 - Padronizar os botões
+- imagens dos projetos levam aos projetos
+- botões no mobile ficam alinhados à direita
+- ícones em missão
+- modal para cadastrar email para entrarmos em contato ao clicar em selecionar plano
 
 ## Instalação
 
