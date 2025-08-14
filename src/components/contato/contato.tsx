@@ -3,29 +3,29 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 
 export function Contato({
-  companyEmail = "contato@minhaempresa.com",
+  companyEmail = "future@healthchain.tec.br",
   endereco = {
-    linha1: "Rua Exemplo, 123",
-    linha2: "Bairro Central",
-    cidade: "Fortaleza",
-    estado: "CE",
-    cep: "60000-000",
-    telefone: "+55 (85) 99999-0000",
-    mapsUrl: "https://maps.google.com",
+    linha1: "R. José Maia Gomes, 258",
+    linha2: "Jatiúca",
+    cidade: "Maceió",
+    estado: "AL",
+    cep: "57036-240",
+    telefone: "+55 82 3025-0497",
+    mapsUrl: "https://maps.app.goo.gl/pzGRcZtjCvo7J3PG9",
   },
 }) {
   return (
     <section className="bg-white ">
       <header className="mx-auto max-w-2xl text-center pt-16">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          Fale com a gente
+          Entre em contato
         </h2>
       </header>
       <div className="grid gap-6 md:grid-cols-3 w-full max-w-7xl mx-auto p-6">
         {/* Card: Formulário */}
         <div className="p-6 space-y-3">
           <h2 className="text-2xl font-semibold tracking-tight">
-            Me passa teu email
+            Cadastre seu email
           </h2>
           <p className="text-sm text-neutral-600 mt-1">
             Informe seu e-mail e nós entraremos em contato.
@@ -50,7 +50,6 @@ export function Contato({
               type="submit"
               className="inline-flex items-center gap-2 rounded-xl px-5 py-3 bg-neutral-900 text-white hover:bg-neutral-800 active:bg-neutral-950 shadow transition"
             >
-              <Mail className="w-4 h-4" />
               Enviar
             </button>
           </form>
@@ -59,7 +58,7 @@ export function Contato({
         {/* Card: zap */}
         <div className="p-6 space-y-3">
           <h2 className="text-2xl font-semibold tracking-tight">
-            Manda um Zap!
+            Envie uma mensagem
           </h2>
           <p className="text-sm text-neutral-600 mt-1">
             clique no link para conversar conosco no WhatsApp.
@@ -72,14 +71,14 @@ export function Contato({
               rel="noreferrer noopener"
               className="inline-flex items-center justify-center w-full rounded-xl border border-neutral-200 px-4 py-2 text-sm hover:bg-neutral-50"
             >
-              Conversar pelo zap
+              Entrar no WhatsApp
             </a>
           </div>
         </div>
 
         {/* Card: Endereço */}
         <div className="p-6 space-y-3">
-          <h3 className="text-lg font-semibold">Endereço</h3>
+          <h2 className="text-2xl font-semibold tracking-tight">Endereço</h2>
           <div className="text-neutral-700 text-sm space-y-1">
             {endereco.linha1 && (
               <p className="flex items-start gap-2">

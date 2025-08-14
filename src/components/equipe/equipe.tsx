@@ -55,7 +55,7 @@ export function Equipe({
               </div>
 
               {/* Nome */}
-              <h3 className="mt-6 text-sm font-semibold leading-none tracking-tight text-center line-clamp-1 px-2">
+              <h3 className="mt-6 text-sm font-semibold leading-none tracking-tight text-center line-clamp-1">
                 {m.name}
               </h3>
 
