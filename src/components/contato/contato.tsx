@@ -1,6 +1,8 @@
 "use client";
 
 import { Phone, Mail, MapPin } from "lucide-react";
+import Link from "next/link";
+import { Button } from "../ui/button";
 
 export function Contato({
   companyEmail = "future@healthchain.tec.br",
@@ -15,7 +17,7 @@ export function Contato({
   },
 }) {
   return (
-    <section className="bg-white ">
+    <section id="contato" className="bg-white ">
       <header className="mx-auto max-w-2xl text-center pt-16">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
           Entre em contato
@@ -27,11 +29,11 @@ export function Contato({
           <h2 className="text-2xl font-semibold tracking-tight">
             Cadastre seu email
           </h2>
-          <p className="text-sm text-neutral-600 mt-1">
+          <p className="text-sm text-neutral-600 mt-1  h-8">
             Informe seu e-mail e nós entraremos em contato.
           </p>
 
-          <form className="mt-5 flex gap-3">
+          <form className="flex gap-3">
             <label htmlFor="email" className="sr-only">
               Seu e-mail
             </label>
@@ -60,26 +62,28 @@ export function Contato({
           <h2 className="text-2xl font-semibold tracking-tight">
             Envie uma mensagem
           </h2>
-          <p className="text-sm text-neutral-600 mt-1">
-            clique no link para conversar conosco no WhatsApp.
+          <p className="text-sm text-neutral-600 mt-1 h-8">
+            Clique para conversar conosco no WhatsApp.
           </p>
           <div className="mt-3 flex flex-wrap gap-3">
-            <a
+            <Link
               href="https://wa.me/5585999990000"
               target="_blank"
-              aria-label={`Abrir WhatsApp`}
-              rel="noreferrer noopener"
-              className="inline-flex items-center justify-center w-full rounded-xl border border-neutral-200 px-4 py-2 text-sm hover:bg-neutral-50"
+              className="w-full"
             >
-              Entrar no WhatsApp
-            </a>
+              <Button className="bg-forest-vivid w-full h-12">
+                Entrar no WhatsApp
+              </Button>
+            </Link>
           </div>
         </div>
 
         {/* Card: Endereço */}
         <div className="p-6 space-y-3">
-          <h2 className="text-2xl font-semibold tracking-tight">Endereço</h2>
-          <div className="text-neutral-700 text-sm space-y-1">
+          <h2 className="text-2xl font-semibold tracking-tight">
+            Venha nos visitar
+          </h2>
+          <div className="text-neutral-700 text-sm space-y-1 h-8">
             {endereco.linha1 && (
               <p className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5" />
@@ -93,23 +97,6 @@ export function Contato({
                 </span>
               </p>
             )}
-            {endereco.telefone && (
-              <p className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                <a
-                  className="hover:underline"
-                  href={`tel:${endereco.telefone}`}
-                >
-                  {endereco.telefone}
-                </a>
-              </p>
-            )}
-            <p className="flex items-center gap-2">
-              <Mail className="w-4 h-4" />
-              <a className="hover:underline" href={`mailto:${companyEmail}`}>
-                {companyEmail}
-              </a>
-            </p>
           </div>
 
           {endereco.mapsUrl && (
@@ -117,7 +104,7 @@ export function Contato({
               href={endereco.mapsUrl}
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center justify-center w-full rounded-xl border border-neutral-200 px-4 py-2 text-sm hover:bg-neutral-50"
+              className="inline-flex items-center justify-center w-full rounded-xl border border-neutral-200 px-4 py-2 text-sm hover:bg-neutral-50 h-12"
             >
               Ver no mapa
             </a>

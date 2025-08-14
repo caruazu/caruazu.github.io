@@ -50,7 +50,7 @@ export default function Home() {
       <Hero />
       <Projetos />
       <Planos />
-      <Sobre />
+      <Sobre id="sobre" />
       <Equipe members={exampleMembers} />
       <Contato />
     </>

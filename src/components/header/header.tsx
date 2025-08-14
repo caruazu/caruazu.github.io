@@ -6,14 +6,15 @@ export const Header = () => {
     <header className="bg-forest-light">
       <div className="container flex items-center justify-between  w-full max-w-7xl mx-auto p-6">
         <div className="text-1xl font-bold text-gray-800">
-          <Link href="/">HEALTHCHAIN</Link>
+          <Link href="#hero">HEALTHCHAIN</Link>
         </div>
 
         <nav className="flex items-center space-x-6">
-          <Link href={""}>Sobre</Link>
-          <Link href={""}>Time</Link>
-
-          <Button>Contato</Button>
+          <Link href={"#planos"}>Preços</Link>
+          <Link href={"#projetos"}>Projetos</Link>
+          <Link href="#contato">
+            <Button className="cursor-pointer">Contato</Button>
+          </Link>
         </nav>
       </div>
     </header>

@@ -26,7 +26,10 @@ export function Equipe({
   cardClassName = "",
 }: EquipeProps) {
   return (
-    <section className={`w-full px-4 md:px-6 lg:px-8 py-12 ${className}`}>
+    <section
+      id="equipe"
+      className={`w-full px-4 md:px-6 lg:px-8 py-12 ${className}`}
+    >
       <div className="mx-auto max-w-6xl">
         <header className="text-center mb-8">
           <h2 className="text-4xl font-bold tracking-tight">{title}</h2>

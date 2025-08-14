@@ -73,7 +73,10 @@ function CheckIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export function Planos() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+    <section
+      id="planos"
+      className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8"
+    >
       <header className="mx-auto max-w-2xl text-center">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
           Planos e Preços
@@ -147,7 +150,8 @@ export function Planos() {
                     ? "bg-forest-medium text-white hover:bg-forest-vivid"
                     : "bg-primary text-primary-foreground hover:opacity-90",
                 ].join(" ")}
-                onClick={() => alert(`Plano selecionado: ${plan.name}`)}
+                // onClick={() => alert(`Plano selecionado: ${plan.name}`)}
+                onClick={() => null}
                 aria-label={`Selecionar plano ${plan.name}`}
               >
                 {plan.cta}

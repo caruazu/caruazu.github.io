@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export const Hero = () => {
   return (
-    <section className="py-12 bg-forest-light">
+    <section className="py-12 bg-forest-light" id="hero">
       <div className="container mx-auto flex flex-col md:flex-row items-center w-full max-w-7xl p-6">
         {/* Texto */}
         <div className="flex-1 text-center md:text-left">
@@ -12,9 +13,11 @@ export const Hero = () => {
           <p className="text-lg text-gray-800 mb-6">
             Desenvolvemos tecnologias para a saúde.
           </p>
-          <button className="bg-gray-800 text-white px-6 py-3 rounded-lg">
-            Saiba mais
-          </button>
+          <Link href="#sobre">
+            <button className="bg-slate-dark text-white px-6 py-3 rounded-lg cursor-pointer">
+              Saiba mais
+            </button>
+          </Link>
         </div>
 
         {/* Imagem - escondida no mobile */}
