@@ -17,6 +17,7 @@ Usei de inspiração o Design System da Anthropic
 - botões no mobile ficam alinhados à direita
 - ícones em missão
 - modal para cadastrar email para entrarmos em contato ao clicar em selecionar plano
+- imagem interativa onde ao clicar aparece uma descrição
 
 ## Instalação
 

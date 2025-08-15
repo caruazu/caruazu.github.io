@@ -1,5 +1,6 @@
 import { Mail, Phone } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
@@ -41,15 +42,16 @@ export const Footer = () => {
           </div>
 
           {/* Nome à esquerda */}
-          <div className="text-white text-1xl font-bold">
-            <p>HEALTHCHAIN</p>
+
+          <div className="text-1xl font-bold text-white">
+            <Link href="#header">HEALTHCHAIN</Link>
           </div>
         </div>
       </div>
 
       <div className="w-full max-w-7xl mx-auto pl-6 pb-3">
         {/* Links à direita */}
-        <div className="text-white text-xs font-bold">
+        <div className="text-white text-xs font-bold pb-3">
           <p className="flex items-center gap-2 ">
             <Mail className="w-4 h-4" />
             <a
@@ -71,6 +73,7 @@ export const Footer = () => {
           </p>
         </div>
       </div>
+
       <div className="text-gray-500 text-xs text-center pb-1">
         <p>© 2025 Healthchain. CNPJ 53.351.091/0001-76</p>
       </div>
