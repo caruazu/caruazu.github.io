@@ -151,7 +151,9 @@ export function Planos() {
                     : "bg-primary text-primary-foreground hover:opacity-90",
                 ].join(" ")}
                 // onClick={() => alert(`Plano selecionado: ${plan.name}`)}
-                onClick={() => null}
+                onClick={() => {
+                  window.location.href = "#contato";
+                }}
                 aria-label={`Selecionar plano ${plan.name}`}
               >
                 {plan.cta}
