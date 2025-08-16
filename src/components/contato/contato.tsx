@@ -1,116 +1,109 @@
-"use client";
-
-import { Phone, Mail, MapPin } from "lucide-react";
+// app/components/Contato.tsx
 import Link from "next/link";
-import { Button } from "../ui/button";
+
+type Card = {
+  label: string;
+  title: string;
+  href: string;
+};
+
+type ContatoProps = {
+  heading?: string;
+  description?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  cards?: [Card, Card];
+};
 
 export function Contato({
-  companyEmail = "future@healthchain.tec.br",
-  endereco = {
-    linha1: "R. José Maia Gomes, 258",
-    linha2: "Jatiúca",
-    cidade: "Maceió",
-    estado: "AL",
-    cep: "57036-240",
-    telefone: "+55 82 3025-0497",
-    mapsUrl: "https://maps.app.goo.gl/pzGRcZtjCvo7J3PG9",
-  },
-}) {
+  heading = "Agende uma demonstração",
+  description = "Estamos prontos para ajudar — tire dúvidas, peça uma proposta ou marque uma reunião.",
+  ctaText = "Enviar mensagem",
+  ctaHref = "/contato",
+  cards = [
+    {
+      label: "Entraremos em contato.",
+      title: "Cadastre seu email",
+      href: "mailto:future@healthchain.tec.br",
+    },
+    {
+      label: "Nosso endereço",
+      title: "Venha nos visitar",
+      href: "https://maps.app.goo.gl/pzGRcZtjCvo7J3PG9",
+    },
+  ],
+}: ContatoProps) {
   return (
-    <section id="contato" className="bg-white ">
-      <header className="mx-auto max-w-2xl text-center pt-16">
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          Entre em contato
-        </h2>
-      </header>
-      <div className="grid gap-6 md:grid-cols-3 w-full max-w-7xl mx-auto p-6">
-        {/* Card: Formulário */}
-        <div className="p-6 space-y-3">
-          <h2 className="text-2xl font-semibold tracking-tight">
-            Cadastre seu email
-          </h2>
-          <p className="text-sm text-neutral-600 mt-1  h-8">
-            Informe seu e-mail e nós entraremos em contato.
-          </p>
+    <section id="contato" className="mx-auto max-w-6xl mb-10 p-4 sm:p-6">
+      <div
+        className="
+          rounded-3xl bg-white p-5 sm:p-7
+          md:p-10
+        "
+      >
+        {/* Layout: coluna no mobile; 3 colunas no md+ */}
+        <div className="grid gap-5 md:grid-cols-3 md:items-start">
+          {/* Coluna esquerda */}
+          <div>
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              {heading}
+            </h2>
 
-          <form className="flex gap-3">
-            <label htmlFor="email" className="sr-only">
-              Seu e-mail
-            </label>
-            <div className="flex-1">
-              <input
-                id="email"
-                name="email"
-                type="email"
-                inputMode="email"
-                required
-                placeholder="voce@exemplo.com"
-                className="w-full rounded-xl border border-neutral-300 focus:border-neutral-800 focus:ring-4 focus:ring-neutral-200 px-4 py-3 text-base outline-none transition"
-              />
-            </div>
-            <button
-              type="submit"
-              className="inline-flex items-center gap-2 rounded-xl px-5 py-3 bg-neutral-900 text-white hover:bg-neutral-800 active:bg-neutral-950 shadow transition"
-            >
-              Enviar
-            </button>
-          </form>
-        </div>
+            <p className="mt-4 max-w-prose text-stone-700">{description}</p>
+          </div>
 
-        {/* Card: zap */}
-        <div className="p-6 space-y-3">
-          <h2 className="text-2xl font-semibold tracking-tight">
-            Envie uma mensagem
-          </h2>
-          <p className="text-sm text-neutral-600 mt-1 h-8">
-            Clique para conversar conosco no WhatsApp.
-          </p>
-          <div className="mt-3 flex flex-wrap gap-3">
+          {/* Cards à direita (empilham no mobile) */}
+          {cards.map((card, idx) => (
             <Link
-              href="https://wa.me/5585999990000"
-              target="_blank"
-              className="w-full"
+              key={idx}
+              href={card.href}
+              className="
+                group rounded-2xl bg-forest-light pb-16 p-5 sm:p-6
+                md:h-56 md:p-7
+                hover:bg-[#b6dbce] transition
+                focus:outline-none focus:ring-2 focus:ring-forest-vivid
+                relative
+              "
             >
-              <Button className="bg-forest-vivid w-full h-12">
-                Entrar no WhatsApp
-              </Button>
+              <div className="text-xs font-medium text-stone-600">
+                {card.label}
+              </div>
+              <div className="mt-1 text-xl font-semibold">{card.title}</div>
+
+              {/* seta no canto inferior direito */}
+              <span
+                aria-hidden
+                className="
+                  absolute bottom-5 right-5 inline-flex h-9 w-9 items-center justify-center
+                  rounded-full border border-stone-800
+                  group-hover:translate-x-0.5 transition-transform
+                "
+                title="Abrir"
+              >
+                <ArrowRight />
+              </span>
             </Link>
-          </div>
-        </div>
-
-        {/* Card: Endereço */}
-        <div className="p-6 space-y-3">
-          <h2 className="text-2xl font-semibold tracking-tight">
-            Venha nos visitar
-          </h2>
-          <div className="text-neutral-700 text-sm space-y-1 h-8">
-            {endereco.linha1 && (
-              <p className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 mt-0.5" />
-                <span>
-                  {endereco.linha1}
-                  {endereco.linha2 ? `, ${endereco.linha2}` : ""}
-                  <br />
-                  {[endereco.cidade, endereco.estado, endereco.cep]
-                    .filter(Boolean)
-                    .join(" - ")}
-                </span>
-              </p>
-            )}
-          </div>
-
-          {endereco.mapsUrl && (
-            <a
-              href={endereco.mapsUrl}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-flex items-center justify-center w-full rounded-xl border border-neutral-200 px-4 py-2 text-sm hover:bg-neutral-50 h-12"
-            >
-              Ver no mapa
-            </a>
-          )}
+          ))}
         </div>
       </div>
     </section>
   );
 }
+
+function ArrowRight(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      className="h-5 w-5"
+      {...props}
+    >
+      <path d="M5 12h14" />
+      <path d="M13 5l7 7-7 7" />
+    </svg>
+  );
+}
+
+export default Contato;

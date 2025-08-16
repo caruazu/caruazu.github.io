@@ -10,14 +10,17 @@ Usei de inspiração o Design System da Anthropic
 
 ## Para fazer
 
+- modal para cadastrar email para entrarmos em contato ao clicar em selecionar plano
+- Por o "|brasil" nos header (só desktop) e footer
+- novos textos para os produtos
 - imagem interativa (infográfico)
-- Tornar os botões funcionais
 - Padronizar os botões
-- imagens dos projetos levam aos projetos
 - botões no mobile ficam alinhados à direita
 - ícones em missão
-- modal para cadastrar email para entrarmos em contato ao clicar em selecionar plano
-- imagem interativa onde ao clicar aparece uma descrição
+- ajeitar os avisos do terminal que o projeto está alertando
+- buscar estilos abstratos para as ilustrações dos projetos que sejam mais sérios
+- barra fixa ao dar scroller
+- usar os ícones do react
 
 ## Instalação
 
