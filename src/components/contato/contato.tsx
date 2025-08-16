@@ -34,13 +34,8 @@ export function Contato({
   ],
 }: ContatoProps) {
   return (
-    <section id="contato" className="mx-auto max-w-6xl mb-10 p-4 sm:p-6">
-      <div
-        className="
-          rounded-3xl bg-white p-5 sm:p-7
-          md:p-10
-        "
-      >
+    <section id="contato" className="mx-auto max-w-6xl mt-10 mb-10 p-4 sm:p-6">
+      <div className="rounded-3xl bg-white sm:p-7 pt-10 md:p-10">
         {/* Layout: coluna no mobile; 3 colunas no md+ */}
         <div className="grid gap-5 md:grid-cols-3 md:items-start">
           {/* Coluna esquerda */}

@@ -49,9 +49,9 @@ export default function Home() {
     <>
       <Hero />
       <Projetos />
-      <Planos />
-      <Sobre id="sobre" />
+      {/* <Planos /> */}
       <Equipe members={exampleMembers} />
+      <Sobre id="sobre" />
       <Contato />
     </>
   );
