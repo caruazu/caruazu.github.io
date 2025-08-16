@@ -3,15 +3,15 @@ import Link from "next/link";
 
 export const Hero = () => {
   return (
-    <section className="py-12 bg-forest-light" id="hero">
-      <div className="container mx-auto flex flex-col md:flex-row items-center w-full max-w-7xl p-6">
+    <section className=" bg-forest-light" id="hero">
+      <div className="container mx-auto flex flex-col md:flex-row items-center w-full max-w-7xl p-6 md:pl-24">
         {/* Texto */}
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Olá! Somos a Healthchain,
+            Somos uma startup da área de Saúde
           </h1>
           <p className="text-lg text-gray-800 mb-6">
-            Desenvolvemos tecnologias para a saúde.
+            Integramos tecnologia avançada à prática clínica
           </p>
           <Link href="#sobre">
             <button className="bg-slate-dark text-white px-6 py-3 rounded-lg cursor-pointer">

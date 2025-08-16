@@ -33,7 +33,7 @@ export function Projetos({
 
       {/* Seção 1 - HealthLaudo */}
       <div className="mx-auto max-w-6xl px-6 mt-12 pb-8">
-        <div className="mt-10 md:mt-14 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
+        <div className="mt-10 md:mt-14 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="order-2 lg:order-none">
             <h3 className="text-2xl md:text-3xl font-semibold tracking-tight">
               {healthLaudo.nome}
