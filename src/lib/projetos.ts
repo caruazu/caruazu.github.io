@@ -21,62 +21,115 @@ export const projetos: Projeto[] = [
     id: "healthlaudo",
     nome: "HealthLaudo",
     resumo:
-      "Plataforma para gestão e emissão de laudos médicos digitais com blockchain.",
+      "Plataforma inovadora para gestão e emissão de telelaudos, criada para simplificar processos e otimizar o fluxo de trabalho dentro das Unidades de Saúde.",
     descricao:
-      "O HealthLaudo é uma plataforma inovadora para gestão e emissão de laudos médicos digitais, integrando tecnologia blockchain para garantir a autenticidade e segurança dos documentos médicos.",
+      "O HealthLaudo, desenvolvido pela Healthchain, é uma plataforma inovadora para gestão e emissão de laudos médicos digitais, criada para simplificar processos e otimizar o trabalho dos profissionais de saúde. Com design moderno, interface intuitiva e arquitetura tecnológica de ponta, elimina as complexidades comuns em outros sistemas, oferecendo rapidez, leveza, segurança e pronto para integração com Inteligência Artificial. Permite que médicos de diferentes especialidades, localizados em qualquer parte do Brasil, possam acessar o sistema, elaborar laudos e receber remuneração sob demanda, ampliando o alcance e a qualidade diagnóstica para pacientes em Alagoas e em todo o país.",
     capa: "/images/prompt.jpg",
     imagens: ["/images/prompt.jpg"],
     secoes: [
       {
         titulo: "Sobre o HealthLaudo",
         paragrafos: [
-          "O HealthLaudo é uma plataforma inovadora para gestão e emissão de laudos médicos digitais, integrando tecnologia blockchain para garantir a autenticidade e segurança dos documentos médicos.",
+          "O HealthLaudo foi desenvolvido para atender às demandas crescentes da medicina moderna, com foco na agilidade, precisão e conectividade entre profissionais e pacientes. Sua infraestrutura baseada em linguagem de programação moderna garante alta performance e segurança de dados, seguindo padrões de confidencialidade exigidos pelo setor de saúde.",
         ],
       },
       {
         titulo: "Funcionalidades Principais",
         itens: [
           {
-            titulo: "Emissão Digital de Laudos",
+            titulo: "Acesso remoto e colaborativo.",
             texto:
-              "Sistema completo para criação, edição e emissão de laudos médicos com assinatura digital certificada.",
+              "Múltiplos médicos, de diferentes estados, podem redigir e assinar laudos conforme suas especialidades.",
           },
           {
-            titulo: "Verificação de Autenticidade",
+            titulo: "Diagnóstico especializado a distância.",
             texto:
-              "Cada laudo é registrado na blockchain, permitindo verificação instantânea de autenticidade e integridade.",
+              "Pacientes em regiões menos assistidas têm acesso a pareceres de especialistas de outras localidades do Brasil.",
           },
           {
-            titulo: "Integração com Sistemas",
+            titulo: "Editor de texto integrado.",
             texto:
-              "API robusta para integração com sistemas hospitalares, clínicas e laboratórios existentes.",
+              "Criação e personalização de laudos diretamente na plataforma, sem necessidade de softwares externos.",
+          },
+          {
+            titulo: "Visualizador DICOM integrado.",
+            texto:
+              "Exibição de imagens médicas com qualidade original, capturadas diretamente dos equipamentos, sem conversões que comprometam a precisão do exame.",
+          },
+          {
+            titulo: "Segurança e rastreabilidade.",
+            texto:
+              "Todos os acessos e alterações são registrados, garantindo integridade e confiabilidade das informações.",
           },
         ],
       },
       {
-        titulo: "Benefícios",
+        titulo: "Para o profissional de saúde",
         itens: [
           {
-            titulo: "Segurança Avançada",
-            texto:
-              "Proteção contra falsificação e alteração não autorizada de documentos médicos.",
+            titulo:
+              "Interface simples e intuitiva, reduzindo curva de aprendizado.",
+            texto: "",
           },
           {
-            titulo: "Eficiência Operacional",
-            texto:
-              "Redução significativa no tempo de emissão e entrega de laudos aos pacientes.",
+            titulo:
+              "Agilidade na elaboração de laudos com ferramentas otimizadas.",
+            texto: "",
           },
           {
-            titulo: "Conformidade Regulatória",
-            texto:
-              "Atendimento completo às normas do CFM e LGPD para documentos médicos digitais.",
+            titulo:
+              "Atuação remota, permitindo aos médicos atenderem a pacientes sem deslocamento.",
+            texto: "",
+          },
+          {
+            titulo:
+              "Segurança jurídica e técnica no manuseio de dados médicos.",
+            texto: "",
           },
         ],
       },
       {
-        titulo: "Tecnologia",
-        paragrafos: [
-          "Desenvolvido com tecnologia blockchain permissionada, garantindo que apenas profissionais autorizados possam emitir laudos, enquanto mantém a transparência e rastreabilidade necessárias para o setor de saúde.",
+        titulo: "Para clínicas e hospitais",
+        itens: [
+          {
+            titulo: "Centralização e padronização dos laudos.",
+            texto: "",
+          },
+          {
+            titulo: "Integração direta com equipamentos de imagem via DICOM.",
+            texto: "",
+          },
+          {
+            titulo: "Menos custos operacionais com impressões e deslocamentos.",
+            texto: "",
+          },
+          {
+            titulo:
+              "Escalabilidade para ampliar rede de especialistas conforme a demanda.",
+            texto: "",
+          },
+        ],
+      },
+      {
+        titulo: "Para pacientes",
+        itens: [
+          {
+            titulo: "Acesso rápido a especialistas de diferentes regiões.",
+            texto: "",
+          },
+          {
+            titulo:
+              "Maior precisão diagnóstica com análise por profissionais experientes.",
+            texto: "",
+          },
+          {
+            titulo: "Redução do tempo de espera para entrega do laudo.",
+            texto: "",
+          },
+          {
+            titulo: "Segurança e confidencialidade das informações médicas.",
+            texto: "",
+          },
         ],
       },
     ],

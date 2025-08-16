@@ -8,10 +8,11 @@ export const Hero = () => {
         {/* Texto */}
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Somos uma startup da área de Saúde
+            Somos uma <i>startup</i> <br />
+            da área de Saúde
           </h1>
           <p className="text-lg text-gray-800 mb-6">
-            Integramos tecnologia avançada à prática clínica
+            Integramos tecnologia avançada à prática clínica.
           </p>
           <Link href="#sobre">
             <button className="bg-slate-dark text-white px-6 py-3 rounded-lg cursor-pointer">
