@@ -13,7 +13,7 @@ type ProjetosProps = {
 
 export function Projetos({
   heroTitle = "Projetos",
-  heroSubtitle = "Nossas soluções para a área da saúde buscam integrar tecnologia avançada à prática clínica, promovendo precisão, economia e facilidade de uso.",
+  heroSubtitle = "Nossas soluções têm como foco: precisão, economia e facilidade de uso para pacientes e profissionais.",
 }: ProjetosProps) {
   // mapeia por nome para reaproveitar o layout existente
   const healthLaudo = data.find((p) => p.id === "healthlaudo")!;
