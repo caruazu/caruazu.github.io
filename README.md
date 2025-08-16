@@ -11,7 +11,6 @@ Usei de inspiração o Design System da Anthropic
 ## Para fazer
 
 - modal para cadastrar email para entrarmos em contato ao clicar em selecionar plano
-- Por o "|brasil" nos header (só desktop)
 - novos textos para os produtos
 - imagem interativa (infográfico)
 - Padronizar os botões

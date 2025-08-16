@@ -17,18 +17,18 @@ type ContatoProps = {
 
 export function Contato({
   heading = "Agende uma demonstração",
-  description = "Estamos prontos para ajudar — tire dúvidas, peça uma proposta ou marque uma reunião.",
+  description = "Solicite uma proposta ou marque uma reunião.",
   ctaText = "Enviar mensagem",
   ctaHref = "/contato",
   cards = [
     {
-      label: "Entraremos em contato.",
-      title: "Cadastre seu email",
+      label: "Entraremos em contato",
+      title: "Envie um email",
       href: "mailto:future@healthchain.tec.br",
     },
     {
       label: "Nosso endereço",
-      title: "Venha nos visitar",
+      title: "Veja nossa localização",
       href: "https://maps.app.goo.gl/pzGRcZtjCvo7J3PG9",
     },
   ],
