@@ -20,7 +20,7 @@ Usei de inspiração o Design System da Anthropic
 - buscar estilos abstratos para as ilustrações dos projetos que sejam mais sérios
 - barra fixa ao dar scroller
 - usar os ícones do react
-- melhorar o visual da página dedicada a projetos
+- melhorar o visual da página dedicada a projetos. por ponto nas listas e negrito. por textos grandes como justificado
 
 ## Instalação
 
