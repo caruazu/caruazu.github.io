@@ -1,221 +1,26 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
-/* Tailwind v4 escuro por classe `.dark` */
-@custom-variant dark (&:is(.dark *));
-
-/* ============== PALETA + TEMA (LIGHT) ============== */
 :root {
-  /* Paleta — da imagem + grupo Forest */
-  --slate-dark: #191919;
-  --slate-medium: #262625;
-  --slate-light: #40403e;
-
-  --cloud-dark: #666663;
-  --cloud-medium: #91918d;
-  --cloud-light: #bfbfba;
-
-  --ivory-dark: #e5e4df;
-  --ivory-medium: #f0f0eb;
-  --ivory-light: #fafaf7;
-
-  --book-cloth: #cc785c;
-  --kraft: #d4a27f;
-  --manilla: #ebdbbc;
-
-  --forest-dark: #1e3a29;
-  --forest-medium: #2f5d40;
-  --forest-light: #deefe9;
-
-  --forest-deep: #17291d;
-  --forest-vivid: #257743;
-  --forest-soft: #769582;
-
-  --focus: #61aaf2;
-  --error: #bf4043;
-  --white: #ffffff;
-  --black: #000000;
-
-  /* Tokens semânticos (tema claro) */
-  --background: var(--ivory-medium);
-  --foreground: var(--slate-dark);
-  --radius: 0.625rem;
-
-  --card: var(--white);
-  --card-foreground: var(--slate-dark);
-
-  --popover: var(--white);
-  --popover-foreground: var(--slate-dark);
-
-  --primary: var(--slate-dark);
-  --primary-foreground: var(--white);
-
-  --secondary: var(--cloud-light);
-  --secondary-foreground: var(--slate-dark);
-
-  --muted: var(--cloud-light);
-  --muted-foreground: var(--cloud-dark);
-
-  --accent: var(--book-cloth);
-  --accent-foreground: var(--white);
-
-  --destructive: var(--error);
-
-  --border: var(--ivory-dark);
-  --input: var(--ivory-dark);
-  --ring: var(--focus);
-
-  /* Cores de gráfico (claro) */
-  --chart-1: var(--book-cloth);
-  --chart-2: var(--focus);
-  --chart-3: var(--forest-medium);
-  --chart-4: var(--kraft);
-  --chart-5: var(--slate-light);
-
-  /* Sidebar (claro) */
-  --sidebar: var(--white);
-  --sidebar-foreground: var(--slate-dark);
-  --sidebar-primary: var(--slate-dark);
-  --sidebar-primary-foreground: var(--white);
-  --sidebar-accent: var(--cloud-light);
-  --sidebar-accent-foreground: var(--slate-dark);
-  --sidebar-border: var(--ivory-dark);
-  --sidebar-ring: var(--focus);
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
-/* ============== EXPOSIÇÃO PARA O TAILWIND ============== */
 @theme inline {
-  /* Semânticas (bg-primary, text-muted, etc.) */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-
-  /* Paleta completa como utilitários (bg-forest-medium, text-book-cloth, etc.) */
-  --color-slate-dark: var(--slate-dark);
-  --color-slate-medium: var(--slate-medium);
-  --color-slate-light: var(--slate-light);
-
-  --color-cloud-dark: var(--cloud-dark);
-  --color-cloud-medium: var(--cloud-medium);
-  --color-cloud-light: var(--cloud-light);
-
-  --color-ivory-dark: var(--ivory-dark);
-  --color-ivory-medium: var(--ivory-medium);
-  --color-ivory-light: var(--ivory-light);
-
-  --color-book-cloth: var(--book-cloth);
-  --color-kraft: var(--kraft);
-  --color-manilla: var(--manilla);
-
-  --color-forest-dark: var(--forest-dark);
-  --color-forest-medium: var(--forest-medium);
-  --color-forest-light: var(--forest-light);
-
-  --color-forest-deep: var(--forest-deep);
-  --color-forest-vivid: var(--forest-vivid);
-  --color-forest-soft: var(--forest-soft);
-
-  --color-focus: var(--focus);
-  --color-error: var(--error);
-  --color-white: var(--white);
-  --color-black: var(--black);
 }
 
-/* ============== TEMA (DARK) ============== */
-.dark {
-  --background: var(--slate-dark);
-  --foreground: var(--ivory-light);
-
-  --card: var(--slate-medium);
-  --card-foreground: var(--ivory-light);
-
-  --popover: var(--slate-medium);
-  --popover-foreground: var(--ivory-light);
-
-  --primary: var(--ivory-light);
-  --primary-foreground: var(--slate-dark);
-
-  --secondary: var(--slate-light);
-  --secondary-foreground: var(--ivory-light);
-
-  --muted: var(--slate-light);
-  --muted-foreground: var(--cloud-light);
-
-  --accent: var(--book-cloth);
-  --accent-foreground: var(--white);
-
-  --destructive: var(--error);
-
-  /* bordas/inputs com leve contraste no escuro */
-  --border: color-mix(in oklab, var(--white) 12%, var(--slate-dark));
-  --input: color-mix(in oklab, var(--white) 16%, var(--slate-dark));
-  --ring: var(--focus);
-
-  /* Gráficos (dark) */
-  --chart-1: var(--book-cloth);
-  --chart-2: var(--focus);
-  --chart-3: var(--forest-light);
-  --chart-4: var(--kraft);
-  --chart-5: var(--manilla);
-
-  /* Sidebar (dark) */
-  --sidebar: var(--slate-medium);
-  --sidebar-foreground: var(--ivory-light);
-  --sidebar-primary: var(--focus);
-  --sidebar-primary-foreground: var(--slate-dark);
-  --sidebar-accent: var(--slate-light);
-  --sidebar-accent-foreground: var(--ivory-light);
-  --sidebar-border: color-mix(in oklab, var(--white) 12%, var(--slate-dark));
-  --sidebar-ring: var(--focus);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
 }
 
-/* ============== BASE ============== */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
 }
