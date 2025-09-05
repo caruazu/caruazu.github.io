@@ -41,7 +41,7 @@ const projetos = [
 export const Projetos = () => {
   return (
     <section className="text-center p-10">
-      <h2 className={`${rajdhaniSans.className} text-5xl lg:text-7xl `}>
+      <h2 className={`${rajdhaniSans.className} text-5xl md:text-7xl `}>
         Projetos
       </h2>
       <h2 className={`${geistMono.className} text-sm `}>
