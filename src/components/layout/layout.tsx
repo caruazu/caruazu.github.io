@@ -179,7 +179,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     };
     document.addEventListener("visibilitychange", onVisibility);
 
-    const targetMs = 1000 / 12;
+    const targetMs = 1000 / 3;
 
     const loop = (t: number) => {
       if (!runningRef.current) {
@@ -213,13 +213,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="relative min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
-      {/* canvas do Game of Life (fixo e visível em todos os navegadores) */}
       <canvas
         ref={canvasRef}
         className="fixed inset-0 z-0 pointer-events-none opacity-10 dark:opacity-10 h-[100svh] w-screen"
         aria-hidden
       />
-      {/* conteúdo por cima do canvas */}
       <main className="relative z-10">{children}</main>
     </div>
   );
