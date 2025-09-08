@@ -179,7 +179,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     };
     document.addEventListener("visibilitychange", onVisibility);
 
-    const targetMs = 1000 / 3;
+    const targetMs = 1000 / 30;
 
     const loop = (t: number) => {
       if (!runningRef.current) {
