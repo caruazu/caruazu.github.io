@@ -13,3 +13,19 @@ npm install
 ```shell
 npm run dev
 ```
+
+## build
+
+```shell
+npx http-server ./out -p 3000 -c-1
+```
+
+scan
+
+```
+npx retire --path ./out
+```
+
+```
+npm audit --omit=dev
+```
