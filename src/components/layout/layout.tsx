@@ -213,7 +213,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="relative min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
       <canvas
         ref={canvasRef}
-        className="fixed inset-0 z-0 pointer-events-none opacity-2 dark:opacity-2 h-[100svh] w-screen"
+        className="fixed inset-0 z-0 pointer-events-none opacity-3 dark:opacity-3 h-[100svh] w-screen"
         aria-hidden
       />
       <main className="relative z-10">{children}</main>
