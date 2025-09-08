@@ -8,17 +8,19 @@ type Grid = Uint8Array;
 export default function Layout({ children }: { children: React.ReactNode }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const rafRef = useRef<number | null>(null);
+  const resizeRafRef = useRef<number | null>(null);
   const runningRef = useRef(true);
   const darkRef = useRef<boolean>(false);
   const gridRef = useRef<Grid | null>(null);
   const colsRef = useRef(0);
   const rowsRef = useRef(0);
   const lastStepRef = useRef(0);
+  const lastViewportRef = useRef({ w: 0, h: 0 });
+
+  const RESIZE_HEIGHT_THRESHOLD = 120; // px — ignora “saltos” pequenos da barra
 
   // --- helpers ---
   const isDarkNow = () => {
-    // suporta tanto darkMode: 'class' (classe .dark no <html>)
-    // quanto darkMode: 'media' (preferência do SO)
     const htmlHasDark = document.documentElement.classList.contains("dark");
     const mediaDark =
       window.matchMedia?.("(prefers-color-scheme: dark)")?.matches ?? false;
@@ -38,7 +40,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     for (let y = 0; y < rows; y++) {
       for (let x = 0; x < cols; x++) {
         let n = 0;
-        // vizinhança de Moore (com wrap toroidal para ficar “infinito”)
         for (let dy = -1; dy <= 1; dy++) {
           for (let dx = -1; dx <= 1; dx++) {
             if (dx === 0 && dy === 0) continue;
@@ -48,7 +49,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           }
         }
         const here = grid[idx(x, y, cols)];
-        // regras clássicas B3/S23
         next[idx(x, y, cols)] = here
           ? n === 2 || n === 3
             ? 1
@@ -75,21 +75,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       : "rgba(0,0,0,0.55)";
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
-    // opcional: leve “ruído” de grade sutil (apenas no light, quase invisível no dark)
-    if (!darkRef.current) {
-      ctx.fillStyle = "rgba(0,0,0,0.03)";
-      for (let y = 0; y < rows; y++) {
-        for (let x = 0; x < cols; x++) {
-          ctx.fillRect(
-            Math.floor(x * (cell + gap)) * DPR,
-            Math.floor(y * (cell + gap)) * DPR,
-            1,
-            1
-          );
-        }
-      }
-    }
-
     ctx.fillStyle = alive;
     const stepPx = (cell + gap) * DPR;
     const sizePx = cell * DPR;
@@ -108,40 +93,41 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const resize = (canvas: HTMLCanvasElement) => {
+  // agora aceita "reseed" opcional
+  const resize = (
+    canvas: HTMLCanvasElement,
+    { reseed }: { reseed: boolean }
+  ) => {
     const DPR = Math.max(1, Math.floor(window.devicePixelRatio || 1));
-    const { innerWidth, innerHeight } = window;
+    const w = window.innerWidth;
+    const h = window.innerHeight;
 
-    // tamanho do “pixel” do jogo: ajusta conforme viewport
-    // (menor tela -> células maiores; maior -> menores)
-    const baseCell = innerWidth < 640 ? 10 : innerWidth < 1024 ? 8 : 6; // px CSS
-    const gap = 2; // px CSS de espaçamento (sutil)
+    const baseCell = w < 640 ? 10 : w < 1024 ? 8 : 6;
+    const gap = 2;
     const cell = baseCell;
 
-    // traduz para pixels físicos do canvas
-    canvas.style.width = `${innerWidth}px`;
-    canvas.style.height = `${innerHeight}px`;
-    canvas.width = Math.floor(innerWidth * DPR);
-    canvas.height = Math.floor(innerHeight * DPR);
+    // CSS size (acompanha viewport)
+    canvas.style.width = `${w}px`;
+    canvas.style.height = `${h}px`;
+    // buffer do canvas em pixels físicos
+    canvas.width = Math.floor(w * DPR);
+    canvas.height = Math.floor(h * DPR);
 
-    const cols = Math.floor(innerWidth / (cell + gap));
-    const rows = Math.floor(innerHeight / (cell + gap));
+    const cols = Math.floor(w / (cell + gap));
+    const rows = Math.floor(h / (cell + gap));
 
     colsRef.current = cols;
     rowsRef.current = rows;
 
-    // re-seed numa mudança grande de layout
-    gridRef.current = seedGrid(cols, rows, 0.28);
-
+    if (reseed || !gridRef.current) {
+      gridRef.current = seedGrid(cols, rows, 0.28);
+    }
     return { cell, gap };
   };
 
   useEffect(() => {
     const canvas = canvasRef.current!;
     const ctx = canvas.getContext("2d", { alpha: true })!;
-    let { cell, gap } = resize(canvas);
-
-    // detecta e observa modo escuro
     darkRef.current = isDarkNow();
 
     const media = window.matchMedia?.("(prefers-color-scheme: dark)");
@@ -154,10 +140,38 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       attributeFilter: ["class"],
     });
 
-    const onResize = () => {
-      ({ cell, gap } = resize(canvas));
+    // primeira medição + seed
+    let { cell, gap } = resize(canvas, { reseed: true });
+    lastViewportRef.current = { w: window.innerWidth, h: window.innerHeight };
+
+    // resize “esperto”: ignora oscilações pequenas de altura
+    const handleResizeMeasured = () => {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      const { w: lw, h: lh } = lastViewportRef.current;
+
+      const widthChanged = Math.abs(w - lw) > 1;
+      const heightChanged = Math.abs(h - lh) > RESIZE_HEIGHT_THRESHOLD;
+
+      if (!widthChanged && !heightChanged) return; // ignora jitter da barra
+      lastViewportRef.current = { w, h };
+
+      // reseed só em mudanças “grandes” (ex.: orientação/largura)
+      ({ cell, gap } = resize(canvas, { reseed: widthChanged }));
     };
-    window.addEventListener("resize", onResize);
+
+    const onResize = () => {
+      if (resizeRafRef.current != null)
+        cancelAnimationFrame(resizeRafRef.current);
+      resizeRafRef.current = requestAnimationFrame(() => {
+        resizeRafRef.current = null;
+        handleResizeMeasured();
+      });
+    };
+
+    window.addEventListener("resize", onResize, { passive: true });
+    // orientação geralmente é quando queremos aplicar o resize completo
+    window.addEventListener("orientationchange", onResize);
 
     const onVisibility = () => {
       runningRef.current = !document.hidden;
@@ -165,8 +179,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     };
     document.addEventListener("visibilitychange", onVisibility);
 
-    // loop com passo ~12 fps (suave, não agressivo)
-    const targetMs = 1000 / 3;
+    const targetMs = 1000 / 12;
 
     const loop = (t: number) => {
       if (!runningRef.current) {
@@ -189,7 +202,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      if (resizeRafRef.current) cancelAnimationFrame(resizeRafRef.current);
       window.removeEventListener("resize", onResize);
+      window.removeEventListener("orientationchange", onResize);
       document.removeEventListener("visibilitychange", onVisibility);
       media?.removeEventListener?.("change", mediaListener);
       mo.disconnect();
@@ -197,14 +212,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 overflow-hidden">
-      {/* canvas do Game of Life (fundo) */}
+    <div className="relative min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+      {/* canvas do Game of Life (fixo e visível em todos os navegadores) */}
       <canvas
         ref={canvasRef}
-        className="fixed inset-0 pointer-events-none opacity-5 dark:opacity-10"
+        className="fixed inset-0 z-0 pointer-events-none opacity-10 dark:opacity-10 h-[100svh] w-screen"
         aria-hidden
       />
-      {/* conteúdo */}
+      {/* conteúdo por cima do canvas */}
       <main className="relative z-10">{children}</main>
     </div>
   );
