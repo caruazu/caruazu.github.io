@@ -70,9 +70,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     gap: number
   ) => {
     const DPR = Math.max(1, Math.floor(window.devicePixelRatio || 1));
-    const alive = darkRef.current
-      ? "rgba(255,255,255,0.65)"
-      : "rgba(0,0,0,0.55)";
+    const alive = darkRef.current ? "rgba(255,255,255,1)" : "rgba(0,0,0,1)";
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
     ctx.fillStyle = alive;
@@ -179,7 +177,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     };
     document.addEventListener("visibilitychange", onVisibility);
 
-    const targetMs = 1000 / 30;
+    const targetMs = 60000 / (120 * 2); //123bpm
 
     const loop = (t: number) => {
       if (!runningRef.current) {
@@ -215,7 +213,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="relative min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
       <canvas
         ref={canvasRef}
-        className="fixed inset-0 z-0 pointer-events-none opacity-10 dark:opacity-10 h-[100svh] w-screen"
+        className="fixed inset-0 z-0 pointer-events-none opacity-2 dark:opacity-2 h-[100svh] w-screen"
         aria-hidden
       />
       <main className="relative z-10">{children}</main>
