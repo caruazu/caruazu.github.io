@@ -17,15 +17,19 @@ npm run dev
 ## build
 
 ```shell
+npm run build
+```
+
+```shell
 npx http-server ./out -p 3000 -c-1
 ```
 
-scan
+### scan
 
-```
+```shell
 npx retire --path ./out
 ```
 
-```
+```shell
 npm audit --omit=dev
 ```
