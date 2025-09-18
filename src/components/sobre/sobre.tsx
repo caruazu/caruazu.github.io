@@ -28,11 +28,11 @@ export const Sobre = () => {
                 height={96}
               />
               <div className="min-w-0">
-                <h3
+                <h2
                   className={`${geistMono.className} text-lg text-neutral-900 dark:text-neutral-50`}
                 >
                   {nome}
-                </h3>
+                </h2>
                 {/* <p className="text-sm text-neutral-500 dark:text-neutral-400 truncate">
                   Desenvolvedor WEB
                 </p> */}
