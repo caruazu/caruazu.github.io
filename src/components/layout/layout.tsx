@@ -101,7 +101,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     const h = window.innerHeight;
 
     const baseCell = w < 640 ? 10 : w < 1024 ? 8 : 6;
-    const gap = 2;
+    const gap = 0; // espaço entre os pixels
     const cell = baseCell;
 
     // CSS size (acompanha viewport)

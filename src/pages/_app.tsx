@@ -8,11 +8,11 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Gustavo Caruazu</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
           content="Portifólio e contato de Gustavo Caruazu."
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <meta name="robots" content="index, follow" />
         <meta name="author" content="caruazu" />
