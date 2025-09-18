@@ -1,13 +1,18 @@
-import { Geist_Mono, Rajdhani } from "next/font/google";
+import { Share_Tech_Mono, Tiny5, VT323 } from "next/font/google";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const tiny5 = Tiny5({
   subsets: ["latin"],
+  weight: "400",
 });
 
-const rajdhaniSans = Rajdhani({
+const vt323 = VT323({
   subsets: ["latin"],
-  weight: "300",
+  weight: "400",
+});
+
+const shareTech = Share_Tech_Mono({
+  subsets: ["latin"],
+  weight: "400",
 });
 
 const projetos = [
@@ -41,21 +46,21 @@ const projetos = [
 export const Projetos = () => {
   return (
     <section className="text-center p-10">
-      <h3 className={`${rajdhaniSans.className} text-5xl md:text-7xl `}>
-        Projetos
-      </h3>
-      <p className={`${geistMono.className} text-sm `}>Os que posso mostrar</p>
+      <h3 className={`${tiny5.className} text-5xl md:text-7xl `}>PROJETOS</h3>
+      <p className={`${vt323.className} text-lg `}>Os que posso mostrar</p>
       <div className="pt-15">
-        <ul className={`${geistMono.className} flex flex-col gap-5`}>
+        <ul className={`${vt323.className} flex flex-col gap-5`}>
           {projetos.map((projeto) => (
             <li key={projeto.nome}>
               <a
                 href={projeto.link}
-                className="text-2xl font-thin underline decoration-[1px] underline-offset-2"
+                className="text-3xl underline decoration-[1px] underline-offset-2"
               >
                 {projeto.nome}
               </a>
-              <p className="text-xs">{projeto.descricao}</p>
+              <p className={`${shareTech.className} text-sm`}>
+                {projeto.descricao}
+              </p>
             </li>
           ))}
         </ul>
