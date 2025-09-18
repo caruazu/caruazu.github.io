@@ -41,12 +41,10 @@ const projetos = [
 export const Projetos = () => {
   return (
     <section className="text-center p-10">
-      <h2 className={`${rajdhaniSans.className} text-5xl md:text-7xl `}>
+      <h3 className={`${rajdhaniSans.className} text-5xl md:text-7xl `}>
         Projetos
-      </h2>
-      <h2 className={`${geistMono.className} text-sm `}>
-        Os que posso mostrar
-      </h2>
+      </h3>
+      <p className={`${geistMono.className} text-sm `}>Os que posso mostrar</p>
       <div className="pt-15">
         <ul className={`${geistMono.className} flex flex-col gap-5`}>
           {projetos.map((projeto) => (
