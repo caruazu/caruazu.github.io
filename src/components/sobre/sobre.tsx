@@ -1,9 +1,14 @@
-import { Geist_Mono } from "next/font/google";
+import { Share_Tech_Mono, VT323 } from "next/font/google";
 import Image from "next/image";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const vt323 = VT323({
   subsets: ["latin"],
+  weight: "400",
+});
+
+const shareTech = Share_Tech_Mono({
+  subsets: ["latin"],
+  weight: "400",
 });
 
 const nome = "Gustavo Caruazu";
@@ -22,14 +27,14 @@ export const Sobre = () => {
               <Image
                 src="https://github.com/caruazu.png"
                 alt="Profile picture"
-                className="h-42 w-42 rounded-full "
+                className="h-42 w-42 border-4 border-black dark:border-white"
                 loading="lazy"
                 width={96}
                 height={96}
               />
               <div className="min-w-0">
                 <h2
-                  className={`${geistMono.className} text-lg text-neutral-900 dark:text-neutral-50`}
+                  className={`${vt323.className} text-3xl text-neutral-900 dark:text-neutral-50`}
                 >
                   {nome}
                 </h2>
@@ -41,7 +46,9 @@ export const Sobre = () => {
 
             {/* Quote */}
             <div className="mt-5 md:mt-0 md:flex-1 content-center ">
-              <p className="px-7 text-lg leading-relaxed md:text-xl ">
+              <p
+                className={`${shareTech.className} px-7 text-lg leading-relaxed md:text-xl`}
+              >
                 {descricao}
               </p>
             </div>
