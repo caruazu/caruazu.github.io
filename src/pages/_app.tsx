@@ -27,6 +27,8 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta property="og:url" content="https://www.caruazu.com/" />
         <meta property="og:image" content="https://github.com/caruazu.png" />
+        <meta property="og:image:width" content="150" />
+        <meta property="og:image:height" content="150" />
 
         {/* --- Dados estruturados (JSON-LD) --- */}
         <script
