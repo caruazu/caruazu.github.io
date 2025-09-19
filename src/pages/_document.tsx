@@ -4,19 +4,7 @@ export default function Document() {
   return (
     <Html lang="pt-br">
       <Head>
-        <link
-          rel="icon"
-          href="/bug.png"
-          type="image"
-          media="(prefers-color-scheme: light)"
-        />
-
-        <link
-          rel="icon"
-          href="/bug-dark.png"
-          type="image"
-          media="(prefers-color-scheme: dark)"
-        />
+        <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg" />
       </Head>
       <body className="antialiased">
         <Main />
