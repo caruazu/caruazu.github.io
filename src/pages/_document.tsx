@@ -5,6 +5,7 @@ export default function Document() {
     <Html lang="pt-br">
       <Head>
         <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg" />
+        <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <body className="antialiased">
         <Main />
