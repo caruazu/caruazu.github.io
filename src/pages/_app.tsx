@@ -26,9 +26,17 @@ export default function App({ Component, pageProps }: AppProps) {
           content="Portifólio e contato de Gustavo Caruazu."
         />
         <meta property="og:url" content="https://www.caruazu.com/" />
-        <meta property="og:image" content="https://github.com/caruazu.png" />
-        <meta property="og:image:width" content="150" />
-        <meta property="og:image:height" content="150" />
+        <meta
+          property="og:image"
+          content="https://www.caruazu.com/profile.webp"
+        />
+        <meta property="og:image:type" content="image/webp" />
+        <meta property="og:image:width" content="115" />
+        <meta property="og:image:height" content="115" />
+        <meta
+          property="og:logo"
+          content="https://www.caruazu.com/web-app.png"
+        />
 
         {/* --- Dados estruturados (JSON-LD) --- */}
         <script
