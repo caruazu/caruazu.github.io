@@ -2,6 +2,7 @@ import Layout from "@/components/layout/layout";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import Script from "next/script";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -30,9 +31,6 @@ export default function App({ Component, pageProps }: AppProps) {
           property="og:image"
           content="https://www.caruazu.com/profile.webp"
         />
-        <meta property="og:image:type" content="image/webp" />
-        <meta property="og:image:width" content="115" />
-        <meta property="og:image:height" content="115" />
         <meta
           property="og:logo"
           content="https://www.caruazu.com/web-app.png"
@@ -65,6 +63,19 @@ export default function App({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      {/* --- Scripts do Google Analytics (fora do Head) --- */}
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+        `}
+      </Script>
     </>
   );
 }
