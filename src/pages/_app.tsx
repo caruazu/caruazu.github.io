@@ -4,6 +4,8 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import Script from "next/script";
 
+import { schemaJSONLD } from "@/lib/data";
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -16,47 +18,25 @@ export default function App({ Component, pageProps }: AppProps) {
         />
 
         <meta name="robots" content="index, follow" />
-        <meta name="author" content="caruazu" />
-        <link rel="canonical" href="https://www.caruazu.com/" />
+        <meta name="author" content={`${schemaJSONLD.alternateName}`} />
+        <link rel="canonical" href={`${schemaJSONLD.url}`} />
 
         {/* --- Open Graph para redes sociais --- */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Gustavo Caruazu" />
+        <meta property="og:title" content={`${schemaJSONLD.name}`} />
         <meta
           property="og:description"
           content="Portifólio e contato de Gustavo Caruazu."
         />
-        <meta property="og:url" content="https://www.caruazu.com/" />
-        <meta
-          property="og:image"
-          content="https://www.caruazu.com/profile.webp"
-        />
-        <meta
-          property="og:logo"
-          content="https://www.caruazu.com/web-app.png"
-        />
+        <meta property="og:url" content={`${schemaJSONLD.url}`} />
+        <meta property="og:image" content={`${schemaJSONLD.image}`} />
+        <meta property="og:logo" content={`${schemaJSONLD.url}/web-app.png`} />
 
         {/* --- Dados estruturados (JSON-LD) --- */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Gustavo Caruazu",
-              url: "https://www.caruazu.com/",
-              sameAs: [
-                "https://github.com/caruazu",
-                "https://www.linkedin.com/in/caruazu",
-                "https://www.instagram.com/caruazu/",
-                "https://wa.me/message/Y7VNNQW6QXP2K1/",
-              ],
-              jobTitle: "Desenvolvedor Full-Stack",
-              worksFor: {
-                "@type": "Organization",
-                name: "Freelancer",
-              },
-            }),
+            __html: JSON.stringify(schemaJSONLD),
           }}
         />
       </Head>
