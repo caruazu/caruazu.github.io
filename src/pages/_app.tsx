@@ -30,7 +30,10 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta property="og:url" content={`${schemaJSONLD.url}`} />
         <meta property="og:image" content={`${schemaJSONLD.image}`} />
-        <meta property="og:logo" content={`${schemaJSONLD.url}/web-app.png`} />
+        <meta
+          property="og:logo"
+          content={`${schemaJSONLD.url}/web-app-icon.png`}
+        />
 
         {/* --- Dados estruturados (JSON-LD) --- */}
         <script
